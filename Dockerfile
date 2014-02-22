@@ -15,10 +15,16 @@ RUN echo "" > /opt/takipi/log/bugtale_service.log
 
 RUN wget https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar -O scala-boom.jar
 
-#RUN /etc/init.d/takipi start
+# Running Takipi through supervisor
+RUN apt-get install -y supervisor
+RUN mkdir -p /var/log/supervisor
+ADD takipi.sv.conf /etc/supervisor/conf.d/
+ADD tester.sv.conf /etc/supervisor/conf.d/
+RUN ln -s /etc/supervisor/supervisord.conf /etc/supervisord.conf
 
-CMD /etc/init.d/takipi start && java -agentlib:TakipiAgent -jar scala-boom.jar
+#CMD /etc/init.d/takipi start && java -agentlib:TakipiAgent -jar scala-boom.jar
 
 #CMD /etc/init.d/takipi start && tail -f /opt/takipi/log/bugtale_service.log
 
-#ADD takipi.sv.conf /etc/supervisor/conf.d/
+#CMD java -agentlib:TakipiAgent -jar scala-boom.jar
+CMD ["/usr/bin/supervisord"]
