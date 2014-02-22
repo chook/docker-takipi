@@ -12,6 +12,13 @@ RUN /opt/takipi/etc/takipi-setup-secret-key --sk=S3875#YAFwDEGg5oSIU+TM#G0G7VATL
 #RUN /etc/init.d/takipi start
 #RUN sleep 5
 RUN echo "" > /opt/takipi/log/bugtale_service.log
-CMD /etc/init.d/takipi start && tail -f /opt/takipi/log/bugtale_service.log
+
+RUN wget https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar -O scala-boom.jar
+
+#RUN /etc/init.d/takipi start
+
+CMD /etc/init.d/takipi start && java -agentlib:TakipiAgent -jar scala-boom.jar
+
+#CMD /etc/init.d/takipi start && tail -f /opt/takipi/log/bugtale_service.log
 
 #ADD takipi.sv.conf /etc/supervisor/conf.d/
