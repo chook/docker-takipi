@@ -18,11 +18,8 @@ RUN /opt/takipi/etc/takipi-setup-secret-key S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIK
 # Getting Java tester
 RUN wget https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar -O scala-boom.jar
 
-# Running Takipi through supervisor
-RUN apt-get install -y supervisor
-RUN mkdir -p /var/log/supervisor
-ADD takipi.sv.conf /etc/supervisor/conf.d/
-ADD tester.sv.conf /etc/supervisor/conf.d/
-RUN ln -s /etc/supervisor/supervisord.conf /etc/supervisord.conf # [Chen] Fix for Ubuntu
-
-CMD ["/usr/bin/supervisord"]
+# Running Takipi
+CMD (/opt/takipi/bin/takipi-service --noforkdaemon &) && \
+      java -agentlib:TakipiAgent \
+	     -Dtakipi.sources.path=src \
+	     -jar scala-boom.jar
