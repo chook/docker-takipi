@@ -1,0 +1,6 @@
+[supervisord]
+nodaemon=true
+
+[program:takipi]
+command=/bin/bash -c "env > cat /etc/default/takipi >> /tmp/takipi.env && mv /tmp/takipi.env /etc/default/takipi && service takipi start"
+redirect_stderr=true
