@@ -24,7 +24,7 @@ RUN mv .takipi takipi
 RUN cp -r takipi /opt
 ENV PATH $PATH:/opt/takipi/bin
 
-RUN /opt/takipi/etc/takipi-setup-secret-key S9075#EFoeBDTn4dzn3KWO#QH/DFl4mjE9UlvISwN7UYL6iFxQyMSv+BC8iAlpk6lY=#3932
+RUN /opt/takipi/etc/takipi-setup-secret-key S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
 
 # Running Java process with Takipi agent
 CMD java -agentlib:TakipiAgent -jar scala-boom.jar
