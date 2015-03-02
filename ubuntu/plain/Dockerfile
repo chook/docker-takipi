@@ -11,7 +11,7 @@ MAINTAINER Chen Harel "https://github.com/chook"
 RUN wget https://s3.amazonaws.com/app-takipi-com/chen/scala-boom.jar -O scala-boom.jar
 
 # Installing Takipi via apt-get and setting up key
-RUN echo "deb [arch=amd64] http://takipi-deb-repo.s3.amazonaws.com takipi main" > /etc/apt/sources.list.d/takipi.list
+RUN echo "deb [arch=amd64] http://takipi-deb-repo.s3.amazonaws.com stable main" > /etc/apt/sources.list.d/takipi.list
 ENV DEBIAN_FRONTEND noninteractive
 RUN wget -O - http://takipi-deb-repo.s3.amazonaws.com/hello@takipi.com.gpg.key | apt-key add -
 RUN apt-get update
