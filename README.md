@@ -1,11 +1,11 @@
 docker-takipi
 =============
 
-Running Takipi inside Docker container
+Running Takipi (https://www.takipi.com) inside a Docker container
 
 2015-01-25
 ----------
-Due to https://github.com/docker/docker/issues/2606 we now recommend you use the heroku Dockerfiles as the heroku add-on of Takipi uses less memory (on the expense of error analysis time). 
+Due to https://github.com/docker/docker/issues/2606 I now recommend you use the heroku Dockerfiles as the heroku add-on of Takipi uses less memory (on the expense of error analysis time). 
 
 2015-01-02
 ----------
