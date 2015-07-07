@@ -22,10 +22,14 @@ RUN wget https://s3.amazonaws.com/app-takipi-com/deploy/linux/takipi-latest-hero
 RUN tar zxvf takipi-heroku.tar.gz
 RUN mv .takipi takipi
 RUN cp -r takipi /opt
+
 ENV PATH $PATH:/opt/takipi/bin
 ENV TAKIPI_SERVICE_PARAMS --xmx=180M
 
 RUN /opt/takipi/etc/takipi-setup-secret-key S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
+
+# Set server name
+RUN /opt/takipi/etc/takipi-setup-machine-name Chen-server-name
 
 # Running Java process with Takipi agent
 CMD java -agentlib:TakipiAgent -jar scala-boom.jar

@@ -26,12 +26,10 @@ RUN cp -r takipi /opt
 ENV PATH $PATH:/opt/takipi/bin
 ENV TAKIPI_SERVICE_PARAMS --xmx=180M
 
+RUN /opt/takipi/etc/takipi-setup-secret-key S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
+
 # Set server name
-# ENV TAKIPI_MACHINE_NAME Chen-server-name
-
-RUN /opt/takipi/etc/takipi-setup-secret-key S10588#m9T1inqZqLzSsLht#yWif5I+Cq0mJmUidCRYi2J4oEQG1Gja7ErwqfMqSUoo=#460c
-
-RUN /opt/takipi/etc/takipi-setup-machine-name AWS-Elastic-Beanstalk
+RUN /opt/takipi/etc/takipi-setup-machine-name Chen-server-name
 
 EXPOSE 80
 
