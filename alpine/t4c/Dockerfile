@@ -70,7 +70,7 @@ RUN /usr/glibc/usr/bin/ldconfig
 RUN rc default
 
 # Install Takipi
-RUN curl -s /dev/null http://s3.amazonaws.com/get.takipi.com/takipi-t4c-installer | \
+RUN curl -sL /dev/null http://get.takipi.com/takipi-t4c-installer | \
 	bash /dev/stdin -i --sk=S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
 
 # Register Takipi libraries

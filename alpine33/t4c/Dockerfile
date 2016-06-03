@@ -63,7 +63,7 @@ RUN echo /usr/libgcc/usr/lib >> /etc/ld.so.conf
 RUN /usr/glibc/usr/bin/ldconfig
 
 # Install Takipi
-RUN curl -s /dev/null http://get.takipi.com/takipi-t4c-installer | \
+RUN curl -Ls /dev/null http://get.takipi.com/takipi-t4c-installer | \
 	bash /dev/stdin -i --sk=S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
 RUN echo /opt/takipi/lib >> /etc/ld.so.conf
 RUN /usr/glibc/usr/bin/ldconfig
