@@ -66,9 +66,6 @@ RUN echo /usr/zlib/usr/lib >> /etc/ld.so.conf
 RUN echo /usr/libgcc/usr/lib >> /etc/ld.so.conf
 RUN /usr/glibc/usr/bin/ldconfig
 
-# Starting the default run level to avoid errors starting Takipi
-RUN rc default
-
 # Install Takipi
 RUN curl -sL /dev/null http://get.takipi.com/takipi-t4c-installer | \
 	bash /dev/stdin -i --sk=S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
@@ -76,9 +73,6 @@ RUN curl -sL /dev/null http://get.takipi.com/takipi-t4c-installer | \
 # Register Takipi libraries
 RUN echo /opt/takipi/lib >> /etc/ld.so.conf
 RUN /usr/glibc/usr/bin/ldconfig
-
-# We must add Takipi to PATH so the agent be able to start Takipi by itself
-ENV PATH ${PATH}:/opt/takipi/bin
 
 ### Takipi installation complete
 

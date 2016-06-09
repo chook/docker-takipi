@@ -11,14 +11,10 @@ RUN apt-get install -y wget openjdk-8-jdk
 RUN update-ca-certificates -f
 
 # Get Takipi for containers 
-RUN echo "deb [arch=amd64] http://takipi-tfc-deb-repo.s3.amazonaws.com stable main" > /etc/apt/sources.list.d/takipi.list
-RUN wget -O - http://s3.amazonaws.com/takipi-tfc-deb-repo/hello%40takipi.com.gpg.key | apt-key add -
-RUN apt-get update
-RUN apt-get install -y takipi
-ENV PATH $PATH:/opt/takipi/bin
+RUN wget -O - -o /dev/null http://get.takipi.com/takipi-t4c-installer | \
+	bash /dev/stdin -i --sk=S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
 
 # Setup Takipi key and name
-RUN /opt/takipi/etc/takipi-setup-secret-key S3875#YAFwDEGg5oSIU+TM#G0G7VATLOqJIKtAMy1MObfFINaQmVT5hGYLQ+cpPuq4=#87a1
 RUN /opt/takipi/etc/takipi-setup-machine-name server-name
 
 # Getting Java tester

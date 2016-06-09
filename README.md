@@ -3,6 +3,10 @@ docker-takipi
 
 Running Takipi (https://www.takipi.com) inside a Docker container
 
+2016-06-09
+----------
+Easier dockerfiles across all distros (centos/ubuntu/alpine) and AWS ElasticBeanstalk 
+
 2016-01-26
 ----------
 Takipi now better supports Docker. 
