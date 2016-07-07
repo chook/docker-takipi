@@ -1,5 +1,5 @@
 # Takipi
-FROM alpine:3.3
+FROM alpine:3.4
 
 MAINTAINER Chen Harel "https://github.com/chook"
 
