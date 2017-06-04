@@ -78,7 +78,7 @@ RUN set -ex && \
 
 # Set environment
 ENV JAVA_HOME /opt/jdk
-ENV PATH ${PATH}:/opt/jdk/bin	
+ENV PATH /opt/jdk/bin:${PATH}
 
 ### Takipi Installation 
 
