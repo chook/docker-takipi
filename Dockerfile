@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -y takipi
 # Setup Takipi key and name
 RUN /opt/takipi/etc/takipi-setup-machine-name server-name
 
+EXPOSE 9090
+
 ADD entrypoint.sh .
 
 # Start the Collector
