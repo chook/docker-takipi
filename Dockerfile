@@ -11,9 +11,6 @@ RUN sh -c "echo 'deb [arch=amd64] http://takipi-deb-repo.s3.amazonaws.com stable
 RUN curl -Ls /dev/null http://takipi-deb-repo.s3.amazonaws.com/hello@takipi.com.gpg.key | apt-key add -
 RUN apt-get update && apt-get install -y takipi
 
-# Setup Takipi key and name
-RUN /opt/takipi/etc/takipi-setup-machine-name server-name
-
 EXPOSE 9090
 
 ADD entrypoint.sh .
