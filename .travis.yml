@@ -28,8 +28,6 @@ notifications:
 before_install:
   - pip install awscli
 
-script:
-
 deploy:
   skip_cleanup: true
   provider: script
