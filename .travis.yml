@@ -1,37 +1,26 @@
 language: python
-
 python:
-  - "3.7-dev"
-
+- 3.7-dev
 services:
-  - docker
-
+- docker
 env:
   global:
-    #Production aws key
-    - AWS_ACCESS_KEY_ID=AKIA4TXB7QOHH4GTVXZF
-    #Production secret key: travis encrypt AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
-    - AWS_SECRET_ACCESS_KEY=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
-#    - secure: CBjQyIXwakr0CWJS2JvFkwWC01ZGl5gikXZ5IBOaxWjLCtBK09j+aiqyq7+RheAb5YW2W77ygYgyWttByvesAVjlu9dycaF9OjEOl7rEkE0MU4G4qlYyTHYPYZx0ktg0SO99oRrKweSOsmUmQXCN3gQFtmcMqRMWfY2ZVi/ZXFjqboQD74Il+GbEVyrxXBNx6ZsKhmwuChgPgeDtQvF5iKEGFCUpc/b8F6NYrnL8nmtKaphLWeeTcm1JtoJ4bv3VoO1qzSoat9E7a+2mEnaqLgKPxPlSPemSo1tdSqd7lJ0VBugBMT3j/70AhvFp3SETHBJI23gV6l6a3okq0tjfbV7fz+blep7N3db7G99rgWA146MhH8LuBjT0cT3HL5vAU7dhnMk+fsCA681Anf8DK//ObnWKSRtrgq8rtcl1yk1d04b2NAoHHycqlYCQITece0k9wt6OHN2LSjz1YoJq95Rdz+gNS59VS3g8O/lsPO5F95ZKNehcAmK4fRb2TM7PfhEQ7aPuZG2teAmFgext9gvVPFSnfurlfPQWtsVoxqGobY9wgMBo7+QHkWueudqpI04zfrnvhBjfLGeklQyAAaLg0B/d9ZWb2xwoxb2CE3MQpANqUDVRByrJO51tmH9adjrUaXIpjghTolb+UJALHCMecFERvcjCIxid2szfZuI=
-    - AWS_DEFAULT_REGION=us-east-1
-    # travis encrypt DOCKER_REGISTRY_ID=<registry_id>
-    - secure: XmADTlTw9W8UBzibpQWJcilabzcAIgV8ywtyyucS8iKsdURyJ5u8KqgR9dOLsacagckxs+FeHISGah1FITx+Bi4M4p9erMdjjIj+vNxmdGmUExj2iCN3P4/jGfBRUa+oGpRozAQpPH68YYNLrE53kC5ffFWx8f+LtxExWdblW4vI9I/MwpWt0ocdNKNWX+fdXEZ2OnzFmuqM+zJ2z7wx4qFreoOcnAxzf93I0huw2HffsuB/k48q1OgmLW7lJWo/YDNo0c3bipb7ZTw8IralbnhyA746QGNnilXsSmJo3My12WpTUl4YsiZexmJunAkLtj0N/azqTB467rcxTnBKtW2JSD8GLPo9BkPVeApjHIe7WUwrpW7WrwaoEnnmcs75RPdOJTEinUmSbMrR9HX0KoQYw+x6QTAslYhcrmUfzjVgRAtkA1xhwQZq0LV6OPWJGbTPNzxaWzxdETPsNnVEVx/VXM61s83Z2kfDozv68hh8MhFJs4D+8DEijukma4ZIcGnMZwSSgctVlUb9rqyjgL3qpHEuCT5E+cbTa+61w9Bd5SU+hOCWLdVja3baBjTrRv9CRkA1HotztTqswWtheO4BqD97Tvc41PyGTvAQqDdurspq0bvYWbYxBRB3XjHLVG5/6zvXqQBrx2J1UjwJUrbKuXPh+D1gOjSQcwE1XAA=
-
+  - AWS_ACCESS_KEY_ID=AKIA4TXB7QOHCEQQJU5V
+  - secure: w+77l5MThpLiWDzuqhZESdqcE+3svRMvzIObraTXb60HdMmKHsQC3SgyxYpC5uaH7ygXtDluwcQ+jAr9ZB5CHAax6T4cCGhIy2CvZECnuFmuBc7/cbD0WXru8jlWy7AtQYbuJTC0t4wRp4+3EpQSRTFXjnkkzo7cw6+8P4ukElYxxNXmY6IbkZXvifjwkm2K4CO+OUQ5EBY5XeR2Rh1jVojJKHPgcQRcn5KxvyrSCyh7+kCPLKOScX0xybLRhqnawlGOzAY4y/R7x9mveV7hDHwlFqZ4M3zS5+IaGbtkqEaF8quLIDXbpdSUWisjFi9D9ikG47pGk4lJHyBBrs+A5za8WNEjMzPQ/QtsvySHiuU6cc8zo7D/xZJBrtWtGYRqO8WPG2kdhywPUK0Cj4obz6REwVxONHyA8LEIt5LIYejwU+wY7euw+jDtQHiH00zc1tYYPwcC/vRXKN/p9P/bMXYCJ5+nhTTI+NO8xNmGFyia4irIeYpqGRXHDKv9W2rIYMZzHYgTjLem4TN+ZH+HkhTWKkoMLdNEt2vDAeDtkB5HcIbczbUL5EuMsurJDBJ6Y14zGxfojmoWxLkLv7e0UbhRz6k657Ukrs1Q91JquEMll/5iEXfJ/xd3EnZ5+26TW7Rv9e1sBSF+HYAYgcK/0Docvdh8WucDT4/8wDfu8F0=
+  - AWS_DEFAULT_REGION=us-east-1
+  - secure: XmADTlTw9W8UBzibpQWJcilabzcAIgV8ywtyyucS8iKsdURyJ5u8KqgR9dOLsacagckxs+FeHISGah1FITx+Bi4M4p9erMdjjIj+vNxmdGmUExj2iCN3P4/jGfBRUa+oGpRozAQpPH68YYNLrE53kC5ffFWx8f+LtxExWdblW4vI9I/MwpWt0ocdNKNWX+fdXEZ2OnzFmuqM+zJ2z7wx4qFreoOcnAxzf93I0huw2HffsuB/k48q1OgmLW7lJWo/YDNo0c3bipb7ZTw8IralbnhyA746QGNnilXsSmJo3My12WpTUl4YsiZexmJunAkLtj0N/azqTB467rcxTnBKtW2JSD8GLPo9BkPVeApjHIe7WUwrpW7WrwaoEnnmcs75RPdOJTEinUmSbMrR9HX0KoQYw+x6QTAslYhcrmUfzjVgRAtkA1xhwQZq0LV6OPWJGbTPNzxaWzxdETPsNnVEVx/VXM61s83Z2kfDozv68hh8MhFJs4D+8DEijukma4ZIcGnMZwSSgctVlUb9rqyjgL3qpHEuCT5E+cbTa+61w9Bd5SU+hOCWLdVja3baBjTrRv9CRkA1HotztTqswWtheO4BqD97Tvc41PyGTvAQqDdurspq0bvYWbYxBRB3XjHLVG5/6zvXqQBrx2J1UjwJUrbKuXPh+D1gOjSQcwE1XAA=
 notifications:
   slack:
     rooms:
-      - intentmedia:SrPsBbiyUmm6V0ZMEFIB6RWG
+    - intentmedia:SrPsBbiyUmm6V0ZMEFIB6RWG
     on_success: never
     on_failure: never
   on:
     branch: master
-
 before_install:
-  - pip install awscli
-
+- pip install awscli
 script:
-  - ./build.sh build
-
+- "./build.sh build"
 deploy:
   skip_cleanup: true
   provider: script
