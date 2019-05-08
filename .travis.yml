@@ -28,8 +28,12 @@ notifications:
 before_install:
   - pip install awscli
 
+script:
+  - ./build.sh build
+
 deploy:
   skip_cleanup: true
+  provider: script
   script: "./build.sh deploy"
   on:
     branch: master
