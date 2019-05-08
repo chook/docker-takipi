@@ -3,7 +3,7 @@
 image=intentmedia/takipi-remote
 cluster=ad-server
 region=us-east-1
-DOCKER_REGISTRY_ID = 866983576462
+DOCKER_REGISTRY_ID=866983576462
 
 function login_to_ecr {
 	     eval `aws ecr get-login --registry-ids $DOCKER_REGISTRY_ID --no-include-email`
