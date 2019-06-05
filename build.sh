@@ -11,7 +11,7 @@ function login_to_ecr {
 }
 
 function build {
-    docker build -t $image .
+    docker build --build-arg dd_api_key=${DD_API_KEY} -t $image .
 }
 
 function publish_container {
